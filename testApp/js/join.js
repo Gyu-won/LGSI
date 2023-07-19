@@ -1,12 +1,22 @@
-function showPopup(message) {
-    var popup = document.getElementById("popup");
+function showPopup(message, type) {
+    var popup = type === "join" ? document.getElementById("popupJoin") :  document.getElementById("popupDup");
     var popupMessage = popup.querySelector("p");
     popupMessage.textContent = message;
     popup.style.display = "block";
     // document.getElementById("popup").style.display = "block";
 }
-function hidePopup() {
-    document.getElementById("popup").style.display = "none";
+
+function hidePopupDup() {
+    document.getElementById("popupDup").style.display = "none";
+}
+
+function hidePopupJoin() {
+    document.getElementById("popupJoin").style.display = "none";
+
+    // setTimeout(function () {
+    //     window.location.href = "login.html";
+    //   }, 3000);
+    window.location.href = "login.html";
 }
 
 function validatePassword() {
@@ -75,7 +85,7 @@ function dupCheck() {
     var email = document.getElementsByName("email")[0].value;
 
     var dup_data = document.getElementById("dupMessage").innerText;
-    showPopup(dup_data);
+    showPopup(dup_data, "dup");
 
     var userData = {
         email: email
@@ -113,8 +123,8 @@ function join() {
         return;
     }
 
-    var p_data = document.getElementById("pMessage").innerText;
-    showPopup(p_data);
+    // var p_data = document.getElementById("pMessage").innerText;
+    // showPopup(p_data);
 
     var userData = {
         memberName: memberName,
@@ -131,13 +141,19 @@ function join() {
         body: JSON.stringify(userData)
     })
     .then(response => {
-        if (response.ok) {
-            document.getElementById("pMessage").innerText = "Completed!";
-            window.location.href = "login.html";
+        if (response.status === 200) {
+            var p_data = document.getElementById("pMessage").innerText;
+            // document.getElementById("pMessage").innerText = "Completed!";
+            p_data = "Completed!";
+            showPopup(p_data, "join");
+
         }
         else {
             if(response.status === 400) {
-                document.getElementById("pMessage").innerText = "Failed";
+                var p_data = document.getElementById("pMessage").innerText;
+                // document.getElementById("pMessage").innerText = "Failed";
+                p_data = "Failed";
+                showPopup(p_data, "join");
             }
         }
     })
