@@ -48,7 +48,7 @@
                 google.maps.event.addListener(marker, 'click', (function(marker, i) {
                     return function() {
                         if(i==0){
-                            fetch('http://192.168.220.1:8080/api/data/get/Bengaluru', {
+                            fetch('http://172.20.10.2:8080/api/data/get/Bengaluru', {
                                 method: 'GET',
                                 headers:{
                                     'Content-Type': 'application/json',
@@ -86,7 +86,7 @@
                                 if(ph <= 5 || ph >= 9){
                                     document.getElementById('phImg').src = "../img/bad.png";
                                 }
-                                if(waterLevel >= 400) {
+                                if(waterLevel >= 600) {
                                     document.getElementById('levelImg').src = "../img/bad.png";
                                     document.getElementById('levelId').innerHTML = "High";
                                 }
@@ -96,7 +96,7 @@
                             .catch(err => console.log("Error !"));
                         }
                         if(i==1){
-                            fetch('http://192.168.220.1:8080/api/data/get/Delhi', {
+                            fetch('http://172.20.10.2:8080/api/data/get/Delhi', {
                             method: 'GET',
                             headers:{
                                 'Content-Type': 'application/json',
@@ -134,7 +134,7 @@
                             if(ph <= 5 || ph >= 9){
                                 document.getElementById('phImg').src = "../img/bad.png";
                             }
-                            if(waterLevel >= 400) {
+                            if(waterLevel >= 600) {
                                 document.getElementById('levelImg').src = "../img/bad.png";
                                 document.getElementById('levelId').innerHTML = "High";
                             }

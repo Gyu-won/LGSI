@@ -3,7 +3,7 @@ import serial
 import time
 
 # 스프링 부트 서버의 엔드포인트 URL
-url = "http://192.168.201.4:8080/api/data/save"
+url = "http://172.20.10.2:8080/api/data/save"
 
 py_serial = serial.Serial(
     port='COM13',
