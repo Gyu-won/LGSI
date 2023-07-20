@@ -8,7 +8,7 @@
   - [Installation](#installation)
 - [Tech Stacks](#tech-stack)
   - [Entity Relationship Diagram(ERD)](#entity-relationship-diagram)
-  - [System Architecture](#system-architecture)
+  - [System Architecture & Static View](#architecture)
   - [Cache API](#cache-api)
   - [API address](#api-address)
   - [Tech stack](#tech-stacks)
@@ -67,6 +67,7 @@ According to the data from the World Health Organization (WHO) on 'Household dri
 
 ### Requirements
 - Hardware
+   ![image](https://github.com/taegon98/LGSI/assets/102223636/97f4a745-28f4-4e0c-b4ef-61ee9d31c91b)
   - Type of sensors
     - UNO R3 SMD --- Atmega328P Board 
     - Raspberry Pi 4 Model-B with 4 GB RAM (OS: Web_OS)
@@ -100,8 +101,12 @@ https://www.youtube.com/watch?v=9Lx_TWu2UQY
 ### Entity Relationship Diagram
 <img src="https://github.com/KimHeonjae/LGSI-peter/assets/134956232/6de39f27-0c61-411a-9d60-161069dbb12b.png" width="700" height="400">
 
-### System Architecture
+### Architecture
 <img src="https://github.com/KimHeonjae/LGSI-peter/assets/134956232/74430fcf-0c78-467c-a979-2d7e70948b1b.png" width="700" height="400">
+
+![image](https://github.com/taegon98/LGSI/assets/102223636/80240509-732e-465f-88d0-d72040cbbf3f)
+
+
 
 ### Cache API
 ![image](https://github.com/Gyu-won/LGSI/assets/102223636/41550ada-12f6-4f66-b5a9-9c6d95645d63)
@@ -142,3 +147,5 @@ https://www.youtube.com/watch?v=9Lx_TWu2UQY
   * Water quality management and monitoring system for personal aquariums or fish tanks.
   * Water quality measurement and risk notification system for school cafeterias.
   * Shower filter replacement timing(schedule) notification system.
+
+  
