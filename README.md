@@ -1,12 +1,12 @@
 # Table of Contents
-- [Project information](#Project-information)
-  - [Description](#description)
+- [Project information](#project-information)
   - [Development period](#development-period)
+  - [Description](#description)
   - [Team members](#team-members)
-- [Getting Started Guide](#Getting-started-guide)
+- [Getting Started Guide](#getting-started-guide)
   - [Requirements](#requirements)
   - [Installation](#installation)
-- [Tech Stacks](#stacks)
+- [Tech Stacks](#tech-stack)
   - [Entity Relationship Diagram(ERD)](#entity-relationship-diagram)
   - [System Architecture](#system-architecture)
   - [Cache API](#cache-api)
@@ -20,6 +20,11 @@
 
 # 1. Project information
 
+### Project Name : Puresome
+
+### Development period
+* 2023.07.01 ∼ 2023.07.19
+
 ### Description
 According to the data from the World Health Organization (WHO) on 'Household drinking water’ data, from 2020 to 2022, the proportion of households with ‘At least basic’ access to drinking water has increased. However, the proportions of households with ‘Surface water’ and ‘Unimproved’ access have consistently decreased. Also A think tank "Science and Environment Center", which proposes policies to the government, points out that on average **200,000 people** die every year from inadequate water supply and contaminated water, and **75%** of India's total population is affected by contaminated water. The accumulation of water quality and flow monitoring data is of paramount importance in order to diagnose pollution status in rivers and effectively manage water quality through efficient control of pollutants. That's why we aim to enhance accessibility to clean water and promote better water management in India.
 
@@ -32,9 +37,6 @@ According to the data from the World Health Organization (WHO) on 'Household dri
 
 <https://www.newstown.co.kr/news/articleView.html?idxno=329356#google_vignette>
 
-
-### Development period
-* 2023.07.01 ∼ 2023.07.19
 
 ### Team members
 - **Jung Gyuwon**
@@ -140,5 +142,3 @@ https://www.youtube.com/watch?v=9Lx_TWu2UQY
   * Water quality management and monitoring system for personal aquariums or fish tanks.
   * Water quality measurement and risk notification system for school cafeterias.
   * Shower filter replacement timing(schedule) notification system.
-
-  
