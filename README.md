@@ -20,7 +20,8 @@
 
 # 1. Project information
 
-### Project Name : Puresome
+### Project Name
+* Puresome
 
 ### Development period
 * 2023.07.01 ∼ 2023.07.19
