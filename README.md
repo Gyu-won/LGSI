@@ -16,7 +16,7 @@
 - [Key features](#key-features)
 - [Expectation](#expectation)
 
------------------------------
+------------
 
 # 1. Project information
 
@@ -92,6 +92,8 @@ According to the data from the World Health Organization (WHO) on 'Household dri
 -------
 
 # 3. Tech Stack
+### Demo
+https://www.youtube.com/watch?v=9Lx_TWu2UQY
 
 ### Entity Relationship Diagram
 <img src="https://github.com/KimHeonjae/LGSI-peter/assets/134956232/6de39f27-0c61-411a-9d60-161069dbb12b.png" width="700" height="400">
@@ -103,7 +105,7 @@ According to the data from the World Health Organization (WHO) on 'Household dri
 ![image](https://github.com/Gyu-won/LGSI/assets/102223636/41550ada-12f6-4f66-b5a9-9c6d95645d63)
 
 ![image](https://github.com/Gyu-won/LGSI/assets/102223636/fb488a06-0c53-42c1-9856-922a1b5dca29)
-
+ - Enhances the performance of the application by using cache(redis) in application. (27.6 sec → 2.2 sec)
 ### API address
 <https://www.notion.so/API-Document-bf95aca04f6c45c292381999a01e6694?pvs=4>
 
@@ -121,9 +123,9 @@ According to the data from the World Health Organization (WHO) on 'Household dri
 * **Provision of Regional Water Quality Data**
   - Collect water quality-related data by connecting sensors to a Raspberry Pi. Provide water quality data corresponding to the user's location. Specifically, We monitor water temperature, pH, turbidity and water level based on the collected data.
 * **Automatic Data Updates**
-  - It is a structure where data is automatically updated after a specific period of time. We develop a map that allows users to easily view the updated status of water resources.
+  - It is a structure where data is automatically updated after a specific period of time. In addition, we enhance the performance that transfers information to users, not just the speed of access to databy using cache instead of database. We develop a map that allows users to easily view the updated status of water resources.
 * **Alarm System**
-  - We assess the state of water based on water quality data. When a dangerous situation occurs, we send a notification to the user within 10 milliseconds. This enables users to receive immediate information about the water condition and take necessary measures in response.
+  - We assess the state of water based on water quality data. When a dangerous situation occurs, we send a notification to the user within 2.5 seconds(avg). This enables users to receive immediate information about the water condition and take necessary measures in response.
 
 -------
 
