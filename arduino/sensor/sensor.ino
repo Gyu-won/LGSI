@@ -71,7 +71,7 @@ void loop() {
 
   
   // get first city's ph
-  if (turbidity > 3.0){
+  if (turbidity > 4.0){
     print_value(3.9);
   }
   else{

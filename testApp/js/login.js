@@ -5,12 +5,23 @@ function showPopup(message) {
     // document.getElementById("popup").style.display = "block";
 }
 
+// function hidePopup() {
+//     document.getElementById("popup").style.display = "none";
+
+//     window.location.href = "../template/index2.html";
+// }
+
 function hidePopup() {
-    document.getElementById("popup").style.display = "none";
+    var popup = document.getElementById("popup");
+    var popupMessage = popup.querySelector("p").textContent;
 
-    window.location.href = "../template/index2.html";
+    if (popupMessage === "Completed!") {
+        window.location.href = "../template/index2.html";
+    } else {
+        // popup.style.display = "none";
+        window.location.href = "../template/login.html";
+    }
 }
-
 function login() {
     var email = document.getElementsByName("email")[0].value;
     var password = document.getElementsByName("password")[0].value;
@@ -33,11 +44,12 @@ function login() {
             var p_data = document.getElementById("pMessage").innerText;
             p_data = "Completed!";
             showPopup(p_data);
+
             // document.getElementById("pMessage").innerText = "Completed!";
 
             // setTimeout(function () {
             //   }, 5000);
-            // return response.json();
+            return response.json();
         } else {
             var p_data = document.getElementById("pMessage").innerText;
             p_data = "Failed";
@@ -46,11 +58,13 @@ function login() {
         }
     })
     .then(data => {
+    //     console.log(data);
+    //     console.log("hello");
+        localStorage.clear();
         localStorage.setItem('email', data.email);
         localStorage.setItem('accessToken', data.accessToken);
         localStorage.setItem('refreshToken', data.refreshToken);
-
-        // window.location.href = "../template/index2.html"; 
+    //     // window.location.href = "../template/index2.html"; 
     })
     .catch(error => {
         console.error('Error:', error);
