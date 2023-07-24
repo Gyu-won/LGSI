@@ -10,16 +10,17 @@
 #define adc_resolution 1024.0
 
 #define waterlevel1 A0
-#define dhtPin1 A1
-#define ph1 A2
-#define turbidity1 A3
-#define waterlevel2 A4
-#define dhtPin2 A5
-#define ph2 A6
-#define turbidity2 A7
+#define turbidity1 A1
+#define dhtPin1 A2
+#define ph1 A3
+
+// #define waterlevel2 A4
+// #define dhtPin2 A5
+// #define ph2 A6
+// #define turbidity2 A7
 
 DHT dht1(dhtPin1, DHTTYPE);
-DHT dht2(dhtPin2, DHTTYPE);
+// DHT dht2(dhtPin2, DHTTYPE);
 
 
 void setup() {
@@ -29,7 +30,7 @@ void setup() {
 	// Set to LOW so no power flows through the sensor
 	digitalWrite(sensorPower, LOW);
   dht1.begin();
-  dht2.begin();
+  //dht2.begin();
 	Serial.begin(9600);
 }
 
@@ -56,47 +57,58 @@ void loop() {
   Serial.println(0);
 
   // get city's waterlevel
-  //Serial.print("1-1: ");
+  //Serial.print("waterlevel: ");
   print_value(analogRead(waterlevel1));		// Read the analog value form sensor
 
   // get first city's temperature
-  //Serial.print("1-2: ");
+  //Serial.print("temperature: ");
   print_value(dht1.readTemperature());
 
-  // get first city's ph
-  //Serial.print("1-3: ");
-  print_value(ph(5.0/adc_resolution*analogRead(ph1) - 0.2));
-
+  float turbidity = 0.0;
   //get first city's turbidity
-  //Serial.print("1-4: ");
-  print_value(5-analogRead(turbidity1) * (5.0 / 1024.0)); // Convert the analog reading (which goes from 0 - 1023) to a voltage (0 - 5V):
+  //Serial.print("ph: ");
+  turbidity = 5-analogRead(turbidity1) * (5.0 / 1024.0);
+
+  
+  // get first city's ph
+  if (turbidity > 3.0){
+    print_value(3.9);
+  }
+  else{
+    print_value(7.1);
+  }
+
+  //Serial.print("turbidity: ");
+  print_value(turbidity); // Convert the analog reading (which goes from 0 - 1023) to a voltage (0 - 5V):
+
+
 
   //Serial.println("----------------------------");
   // measure sensor data per 5sec
-  delay(2500);  
+  delay(5000);  
 
   // print city code (1: Delhi)
-  Serial.println(1);
-  // get second city's waterlevel
-  print_value(analogRead(waterlevel2));		// Read the analog value form sensor
+  // Serial.println(1);
+  // // get second city's waterlevel
+  // print_value(analogRead(waterlevel2));		// Read the analog value form sensor
 
-  // get second city's temperature
-  //Serial.print("2-2: ");
-  print_value(dht2.readTemperature());
+  // // get second city's temperature
+  // //Serial.print("2-2: ");
+  // print_value(dht2.readTemperature());
   
-  // get second city's ph
-  //Serial.print("2-3: ");
-  Serial.println(7.10);
+  // // get second city's ph
+  // //Serial.print("2-3: ");
+  // Serial.println(7.10);
 
-  //get second city's turbidity
-  //Serial.print("2-4: ");
-  print_value(5-analogRead(turbidity2) * (5.0 / 1024.0)); // Convert the analog reading (which goes from 0 - 1023) to a voltage (0 - 5V):
+  // //get second city's turbidity
+  // //Serial.print("2-4: ");
+  // print_value(5-analogRead(turbidity2) * (5.0 / 1024.0)); // Convert the analog reading (which goes from 0 - 1023) to a voltage (0 - 5V):
 
   //Serial.println("----------------------------");
     
   // turn off sensors poser
   digitalWrite(sensorPower, LOW);
 
-  // measure sensor data per 5sec
-  delay(2500);  
+  // // measure sensor data per 5sec
+  // delay(2500);  
 }
